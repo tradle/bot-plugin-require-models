@@ -1,0 +1,9 @@
+{
+  "name": "@tradle/bot-plugin-require-models",
+  "version": "1.0.0",
+  "description": "make sure the user gets the custom models your bot uses",
+  "main": "index.js",
+  "repository": {},
+  "author": "mvayngrib",
+  "license": "MIT"
+}
