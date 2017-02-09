@@ -1,7 +1,7 @@
 
 module.exports = function requireModels (models) {
   return function install (bot) {
-    bot.users.on('create', function (user) {
+    function onCreateUser (user) {
       bot.send({
         userId: user.id,
         object: {
@@ -9,6 +9,13 @@ module.exports = function requireModels (models) {
           models
         }
       })
-    })
+    }
+
+    bot.users.on('create', onCreateUser)
+
+    return function disable () {
+      bot.users.removeListener('create', onCreateUser)
+    }
+
   }
 }
