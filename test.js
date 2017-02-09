@@ -41,7 +41,6 @@ test('basic', co(function* (t) {
 
   // restart
   stop()
-  stop = requireModels(models.reverse())(bot)
   yield bot.receive()
   t.equal(timesUpdated, 1)
   t.equal(timesSaved, 1)
