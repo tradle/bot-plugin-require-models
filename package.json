@@ -1,9 +1,24 @@
 {
-  "name": "@tradle/bot-plugin-require-models",
+  "name": "@tradle/bot-require-models",
   "version": "1.0.0",
-  "description": "make sure the user gets the custom models your bot uses",
+  "description": "make sure your users always get your latest models",
   "main": "index.js",
   "repository": {},
   "author": "mvayngrib",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "json-stable-stringify": "^1.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "keywords": [
+    "bot",
+    "tradle"
+  ],
+  "scripts": {
+    "test": "node test",
+    "lint": "eslint --quiet ."
+  }
 }
