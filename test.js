@@ -30,7 +30,7 @@ test('basic', co(function* (t) {
     }
   }
 
-  let stop = requireModels(models)(bot)
+  let api = requireModels(models)(bot)
   yield bot.receive()
   t.equal(timesUpdated, 1)
   t.equal(timesSaved, 1)
@@ -40,14 +40,14 @@ test('basic', co(function* (t) {
   t.equal(timesSaved, 1)
 
   // restart
-  stop()
+  api.uninstall()
   yield bot.receive()
   t.equal(timesUpdated, 1)
   t.equal(timesSaved, 1)
 
-  stop()
+  api.uninstall()
   models.push({ id: 'c' })
-  stop = requireModels(models)(bot)
+  api = requireModels(models)(bot)
   yield bot.receive()
   t.equal(timesUpdated, 2)
   t.equal(timesSaved, 2)
