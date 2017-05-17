@@ -24,9 +24,11 @@ test('basic', co(function* (t) {
     users: {
       save: () => timesSaved++
     },
-    addReceiveHandler: function (handler) {
-      handlers.push(handler)
-      return () => handlers.filter(h => h !== handler)
+    hook: function (method, handler) {
+      if (method === 'receive') {
+        handlers.push(handler)
+        return () => handlers.filter(h => h !== handler)
+      }
     }
   }
 
