@@ -1,6 +1,5 @@
 
-const Promise = require('bluebird')
-const co = Promise.coroutine
+const co = require('co').wrap
 const test = require('tape')
 const requireModels = require('./')
 
@@ -9,7 +8,7 @@ test('basic', co(function* (t) {
   let timesUpdated = 0
   let timesSaved = 0
 
-  const user = {}
+  const user = { id: 'bob' }
   const handlers = []
   const bot = {
     receive: co(function* () {
@@ -22,13 +21,13 @@ test('basic', co(function* (t) {
       timesUpdated++
     }),
     users: {
-      save: () => timesSaved++
+      merge: co(function* () {
+        timesSaved++
+      })
     },
-    hook: function (method, handler) {
-      if (method === 'receive') {
-        handlers.push(handler)
-        return () => handlers.filter(h => h !== handler)
-      }
+    onmessage: function (handler) {
+      handlers.push(handler)
+      return () => handlers.filter(h => h !== handler)
     }
   }
 

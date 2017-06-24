@@ -7,7 +7,7 @@
   "author": "mvayngrib",
   "license": "MIT",
   "dependencies": {
-    "@tradle/bot-keep-fresh": "^2.0.1"
+    "@tradle/bot-keep-fresh": "tradle/bot-keep-fresh#cloud"
   },
   "devDependencies": {
     "tape": "^4.6.3"

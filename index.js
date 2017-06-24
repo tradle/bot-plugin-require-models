@@ -14,7 +14,7 @@ module.exports = function keepModelsFresh (models) {
     update: function update ({ bot, user, item }) {
       // send the latest models to the user
       return bot.send({
-        userId: user.id,
+        to: user.id,
         object: {
           _t: 'tradle.ModelsPack',
           // latest models
