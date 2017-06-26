@@ -4,7 +4,7 @@
 
 "@tradle/bot-keep-fresh@tradle/bot-keep-fresh#cloud":
   version "2.0.1"
-  resolved "https://codeload.github.com/tradle/bot-keep-fresh/tar.gz/36afecba6bb2cff2867c54a5e4ac6d6a2f021ce2"
+  resolved "https://codeload.github.com/tradle/bot-keep-fresh/tar.gz/bfa034baf9dd57d4d710063f1b0c12f54a51a688"
   dependencies:
     co "^4.6.0"
     debug "^2.6.0"
